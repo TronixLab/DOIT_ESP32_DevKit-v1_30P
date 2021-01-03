@@ -1,1 +1,1 @@
-# ESP-WROOM-32
+# ESP-WROOM-32 (30P)
