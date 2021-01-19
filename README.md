@@ -33,3 +33,14 @@ The image above explains all of this board's pins (version with 30 GPIOs). The c
 * 2 Digital-to-Analog Converters (DAC)
 * 2 I2S interfaces
 * 10 Capacitive sensing GPIOs
+
+### Digital input GPIO pins
+It has 6 GPIO pins that can only be used as digital input pins. It is not possible to configure them as digital output pins. Therefore, they do not have internal push-pull resistors attached to them. It is only possible to use them as digital input pins.
+* GPIO34
+* GPIO35
+* GPIO36
+* GPIO37
+* GPIO38
+* GPIO39
+
+**Note:** *The maximum operating current which GPIO pins can sink and source is 40mA according to the datasheet of ESP32 chip. But it is recommended to keep it below 20mA.*
