@@ -172,6 +172,6 @@ First Serial RX0, TX0 is used for programming,
 * GPIO1 (U0TXD)
 Another Serial port is available on
 * GPIO16 (U2RXD)
-* GIIO17 (U2TXD)
-When programming it is named as Serial2.
+* GPIO17 (U2TXD)
+When programming it is named as *Serial2*.
 
