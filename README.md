@@ -26,7 +26,7 @@ The image above explains all of this board's pins (version with 30 GPIOs). The c
 
 ## ESP32 Peripherals
 * 18 Analog-to-Digital Converter (ADC) channels
-* 3 SPI interfaces
+* 4 SPI interfaces
 * 3 UART interfaces
 * 2 I2C interfaces
 * 16 PWM output channels
