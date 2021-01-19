@@ -22,4 +22,14 @@ About this development board, I see many people searching online. Are there seve
 
 ![alt text](https://github.com/TronixLab/DOIT_ESP32_DevKit-v1_30P/blob/main/Docs/DOIT_ESP32-DevkitV1_PINOUT.png?raw=true)
 
-The image above explains all of this board's pins (version with 30 GPIOs). The chip that is used with the board has 48 GPIO pins, as I described earlier. But through these development boards, we cannot use all the pins.
+The image above explains all of this board's pins (version with 30 GPIOs). The chip that is used with the board has 48 GPIO pins, as I described earlier. But through these development boards, we cannot use all the pins. As seen in the image above, the ESP32 devkit has 30 pins and 15 on each side of the board, each GPIO pin has several functionalities that can be configured using specific registers. There are many types of GPIOs available, such as digital input, digital output, analog input, analog output, capacitive contact, communication with UART, and many other features mentioned above.
+
+## ESP32 Peripherals
+* 18 Analog-to-Digital Converter (ADC) channels
+* 3 SPI interfaces
+* 3 UART interfaces
+* 2 I2C interfaces
+* 16 PWM output channels
+* 2 Digital-to-Analog Converters (DAC)
+* 2 I2S interfaces
+* 10 Capacitive sensing GPIOs
