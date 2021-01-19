@@ -112,6 +112,25 @@ You need to specify these parameters in the code:
 * PWM channel,
 * GPIO where you want to output the signal.
 
+### Real-Time Clock GPIO pins (RTC)
+On the ESP32, there is RTC GPIO support. When the ESP32 is in a deep sleep, the GPIOs routed to the RTC low-power subsystem can be used. When the Ultra Low Power (ULP) co-processor is operating, these RTC GPIOs can be used to wake the ESP32 up from deep sleep. As an external wake up source, the following GPIOs can be used.
+* RTC_GPIO0 (GPIO36)
+* RTC_GPIO3 (GPIO39)
+* RTC_GPIO4 (GPIO34)
+* RTC_GPIO5 (GPIO35)
+* RTC_GPIO6 (GPIO25)
+* RTC_GPIO7 (GPIO26)
+* RTC_GPIO8 (GPIO33)
+* RTC_GPIO9 (GPIO32)
+* RTC_GPIO10 (GPIO4)
+* RTC_GPIO11 (GPIO0)
+* RTC_GPIO12 (GPIO2)
+* RTC_GPIO13 (GPIO15)
+* RTC_GPIO14 (GPIO13)
+* RTC_GPIO15 (GPIO12)
+* RTC_GPIO16 (GPIO14)
+* RTC_GPIO17 (GPIO27)
+
 ### Capacitive Touch GPIO pins
 On board, 10 capacitive touch sensors are provided by ESP-WROOM-32. So while you are using this development board, you don't need to use separate touch sensors in your project. Like magnetic field detection, these capacitive touch sensors can be used to detect any electrical and magnetic waves around them. With these touch controls, you can use a small array of pads rather than push buttons. Those internal touch sensors are connected to these GPIOs:
 * T0 (GPIO 4)
@@ -125,4 +144,34 @@ On board, 10 capacitive touch sensors are provided by ESP-WROOM-32. So while you
 * T8 (GPIO 33)
 * T9 (GPIO 32)
 
+### Built-In Hall Effect Sensor
+The development board of the ESP32 features an integrated hall effect sensor that senses changes in its surroundings in the magnetic field. ESP32 produces a small voltage which can be calculated if you want this development board in the magnetic field.
+
+### Inter-IC Communication pins (I2C)
+For two-wire I2C communication, it has dedicated pins available. For data transfer, one pin is used and another pin for clock synchronization is used. When using the ESP32 with the Arduino IDE, you should use the ESP32 I2C default pins (supported by the Wire library):
+* GPIO21 (SDA)
+* GPIO22 (SCL)
+
+**Note:** *In many breakout boards, the SDA line may also be labeled as SDI and the SCL line as SCK.*
+
+### Serial Peripheral Interface GPIO pins (SPI)
+SPI Master driver is a program that controls ESP32’s SPI peripherals while they function as masters. ESP32 integrates four SPI peripherals. SPI0 and SPI1 are used internally to access the ESP32’s attached flash memory. SPI2 and SPI3 are general purpose SPI controllers, sometimes referred to as HSPI and VSPI, respectively. They are open to users. SPI2 and SPI3 have independent signal buses with the same respective names. By default, the pin mapping for SPI is:
+| SPI  | MOSI | MISO | CLK | CS |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| **VSPI**  | GPIO 23  | GPIO 19 | GPIO 18 | GPIO 5 |
+| **HSPI**  | GPIO 13  | GPIO 12 | GPIO 14 | GPIO 15 |
+
+
+### Inter-IC Sound pins (I2S)
+It is a serial, synchronous communication protocol that is usually used for transmitting audio data between two digital audio devices. ESP32 includes two peripherals for I2S serial communication. The I2S is used to send and receive audio between two Audino units. In a half-duplex communication mode, each I2S controller works. But to achieve full-duplex communication, we should combine these two available controllers. I2S0 output can be routed directly to the digital-to-analog converter’s (DAC) output channels (GPIO25 & GPIO26) to produce direct analog output without involving any external I2S codecs.
+
+### Universal Asynchronous Receiver/Transmitter GPIO pins (UART)
+There are three serial ports on the ESP32 known as U0UXD, U1UXD and U2UXD all work at 3.3V TTL Level. There are three hardware supported serial interfaces on the ESP32 known as UART0, UART1 and UART2. 
+First Serial RX0, TX0 is used for programming,
+* GPIO3 (U0RXD)
+* GPIO1 (U0TXD)
+Another Serial port is available on
+* GPIO16 (U2RXD)
+* GIIO17 (U2TXD)
+When programming it is named as Serial2.
 
