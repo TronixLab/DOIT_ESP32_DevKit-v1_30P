@@ -44,3 +44,26 @@ It has 6 GPIO pins that can only be used as digital input pins. It is not possib
 * GPIO39
 
 **Note:** *The maximum operating current which GPIO pins can sink and source is 40mA according to the datasheet of ESP32 chip. But it is recommended to keep it below 20mA.*
+
+Some GPIOs called *strapping pins* change their status at boot or reset to HIGH or output PWM signals. This implies that when the ESP32 resets or boots, if you have outputs connected to these GPIOs, you can get unexpected results.
+* GPIO 1
+* GPIO 3
+* GPIO 5
+* GPIO 6 to GPIO 11 (connected to the ESP32 integrated SPI flash memory – not recommended to use).
+* GPIO 14
+* GPIO 15
+
+GPIO 6 to GPIO 11 are exposed in some ESP32 development boards. However, these pins are connected to the integrated SPI flash on the ESP-WROOM-32 chip and are not recommended for other uses. So, don’t use these pins in your projects.
+* GPIO 6 (SCK/CLK)
+* GPIO 7 (SDO/SD0)
+* GPIO 8 (SDI/SD1)
+* GPIO 9 (SHD/SD2)
+* GPIO 10 (SWP/SD3)
+* GPIO 11 (CSC/CMD)
+
+These are used to bring the ESP32 into the flashing mode or bootloader. You need not worry about the condition of these pins on most development boards with built-in USB/Serial. For flashing or boot mode, the board puts the pins in the right state. However, you may have difficulty trying to upload new code, flashing the ESP32 with new firmware or resetting the board if you have peripherals attached to those pins. If you have any peripherals linked to the strapping pins and you are having trouble uploading code or flashing the ESP32, it could be because the ESP32 is prevented from accessing the correct mode by those peripherals. In order to lead you in the right direction, read the [Boot Mode Selection documentation](https://github.com/espressif/esptool/wiki/ESP32-Boot-Mode-Selection). Those pins function as planned after resetting, blinking, or booting.
+
+All GPIO pins have pull-up and pull-down resistor internally in the ESP32 except GPIO 34, 35, 36, 39 pins, internal pull-down resistor only.
+*NOTE:* *If INPUT, GPIO 5 IS ALWAYS LOGIC HIGH*, *If INPUT_PULLUP, GPIO 2 IS ALWAYS LOGIC LOW*, *If INPUT_PULLDOWN, GPIO 5 IS ALWAYS LOGIC HIGH*
+
+## Analog GPIO pins
