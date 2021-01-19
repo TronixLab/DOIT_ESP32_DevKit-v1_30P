@@ -8,15 +8,18 @@ Here’s a high-level summary of the features and specifications of the ESP32:
 | Core  | 2  |
 | Architecture  | 32-bit  |
 | Clock  | 160MHZ, up to 240MHz  |
-| Bluetooth  | classic & BLE 4.2  |
+| Bluetooth  | Classic & BLE 4.2  |
 | Wi-Fi  | TCP/IP, full 802.11 b/g/n/e/i WLAN MAC protocol  |
 | RAM  | 512 KB  |
 | Flash  | 4MB, up to 16MB  |
 | Peripherals  | ADC,DAC,PWM,UART,SPI,I2C,I2S,CAN,Capacitive GPIO...  |
 
-We're going to use the ESP32 DEVKIT DOIT board as shown in the figure below, as a guide for this repo. But the information on this page is also compatible with the ESP-WROOM-32 chip for other ESP32 development boards. The ESP32 devkit uses the module ESP-WROOM-32. But across all ESP32 development boards, the functionality of all GPIO pins is the same.
+We're going to use the ESP32 DEVKIT DOIT board as shown in the figure below, as a guide for this repo. But the information on this page is also compatible with the [ESP-WROOM-32](https://github.com/TronixLab/DOIT_ESP32_DevKit-v1_30P/blob/main/Docs/ESP-WROOM-32-DATASHEET.pdf) chip for other ESP32 development boards. The ESP32 devkit uses the module ESP-WROOM-32. But across all ESP32 development boards, the functionality of all GPIO pins is the same.
 
 ![alt text](https://startingelectronics.org/articles/ESP32-WROOM-testing/doit-esp-wroom-32-devkit.jpg)
 
 About this development board, I see many people searching online. Are there several individuals asking questions about how to use their GPIO pins? What GPIO pin is a digital input-output pin that can be used? What GPIO pin is an analog pin that can be used? And which pin should not be used in order to safely use this board? In this post, you will get the answer to these questions. You will get the answer to these questions in this repo.
 
+![alt text](https://github.com/TronixLab/DOIT_ESP32_DevKit-v1_30P/blob/main/Docs/DOIT_ESP32-DevkitV1_PINOUT.png?raw=true)
+
+The image above explains all of this board's pins (version with 30 GPIOs). The chip that is used with the board has 48 GPIO pins, as I described earlier. But through these development boards, we cannot use all the pins.
